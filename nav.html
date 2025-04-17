@@ -1,0 +1,78 @@
+<ul>
+    <li>
+        <a href="index.html?id=0" class="nav_a"> <!--丟網頁要丟這串-->
+            首頁
+            <div class="line_contain">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="this_line"></div>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="index.html?id=1" class="nav_a">
+            功能
+			<div class="line_contain">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="this_line"></div>
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="index.html?id=2" class="nav_a">
+            實作
+   			<div class="line_contain">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="this_line"></div>
+            </div>
+        </a>
+    </li>
+</ul>
+
+<script>
+	$(document).ready(function() {
+		
+		var params=new URLSearchParams(window.location.search);
+		var id=params.get("id");
+		$(".nav_a").eq(id).addClass("this_text");
+		
+		$("li").removeClass("ch_bg");
+		$(".line_contain").show();
+	
+		if(id=="null"){
+			$(".this_line").eq(0).css({"visibility":"visible"});
+		}else{
+			$(".this_line").eq(id).css({"visibility":"visible"});
+		}
+		
+		$(window).on('load resize',function(){
+        var a_w = document.body.clientWidth;
+		
+        if(a_w < 768){
+			
+			$(".line_contain").hide();
+			if(id=="null"){
+				$("li").eq(0).addClass("ch_bg");
+			}else{
+				$("li").eq(id).addClass("ch_bg");
+			}
+			
+		}else{
+			
+			$("li").removeClass("ch_bg");
+			$(".line_contain").show();
+		
+			if(id=="null"){
+				$(".this_line").eq(0).css({"visibility":"visible"});
+			}else{
+				$(".this_line").eq(id).css({"visibility":"visible"});
+			}			
+		};
+   		 });	
+		
+		
+		
+	});
+</script>

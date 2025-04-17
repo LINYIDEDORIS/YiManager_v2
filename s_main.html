@@ -1,0 +1,124 @@
+<link href="css/s_main.css" rel="stylesheet" type="text/css">
+
+<div class="m_sec">
+
+    <!--banner-->
+    <div class="banner">
+        <!--anitext-->
+        <div class="anitext_box">
+            <div class="anitext">
+                <p>策展者與觀展者的橋樑，<br>讓藝術被更多人看見。</p>
+                <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=915eygdv" target="_blank"><img src="images/code.png" height="85px" alt="code" /></a>
+            </div>
+        </div>
+        
+        <div class="bg_pic">
+        	<img src="images/glass.png" height="85px" alt="glasses" />
+        </div>
+        
+        <!--arrow-->
+        <div class="arrow">
+            <a href="#con"><img src="images/arrow.png" alt="arrow" /></a>
+        </div>
+    </div>
+    
+    <!--content-->
+    <div class="content"  id="con">
+    
+        <aside>
+        <div class="con_btn">動機</div>
+        <div class="con_btn">作者</div>
+        <div class="con_btn">演進</div>
+        
+        </aside>
+        
+        <div class="con_wrap">
+            
+            <!--box1-->
+            <div class="con_box" >
+                <div class="con_pic"><img src="images/a1.png" alt="motivate" /></div>
+                
+                <div class="con_text">
+                    <h1>動機</h1>
+                    <span></span>
+                    <p>此為筆者之科技部大專生專題研究計畫，以Line對話機器人為中心，探究在藝術等展覽場域，不同角色使用者在體驗上的影響因素，期望建構出讓策展與觀展雙邊，溝通更有效率且便利的平台，為相關領域貢獻一分心力。</p>
+                </div>
+            </div>
+            
+            <!--box2-->
+            <div class="con_box">
+                <div class="con_pic"><img src="images/a2.png" alt="author" /></div>
+                
+                <div class="con_text">
+                   	<h1>作者</h1>
+                    <span></span>
+                	<p>林宜德，國立清華大學心理學第一專長、創新設計學分學程，跨領域學習之大四學生，指導老師為學習科學與科技研究所　廖冠智教授。</p>
+                </div>
+            </div>
+            
+            <!--box3-->
+            <div class="con_box">
+                <div class="con_pic 3"><img src="images/a3.png" alt="history" /></div>
+                
+                <div class="con_text">
+                <h1>演進</h1>
+                <span></span>
+                <p>目前最新的版本為藝管家1.0，前一版藝管家0.0是以筆者觀察社會展覽概況與需求進行發想與設計，而藝管家1.0則更加著重策展者的角度，進行改良。</p>
+                </div>
+           	</div>
+            
+        </div>
+    
+    
+    </div>
+    
+    
+</div>
+    
+    
+
+<script>
+$(document).ready(function(){
+		
+		$("aside").show();
+		
+		$(".con_box").eq(0).css({"z-index":"800"});
+		$(".con_btn").eq(0).addClass("conb");
+		
+		$(".con_btn").click(function(){
+			var _index = $(this).index();
+			
+			$(this).addClass("conb").siblings().removeClass("conb");
+			$(".con_box").eq(_index).fadeIn(1000).siblings().fadeOut(1000);	
+		});
+		
+		
+		$(window).on('load resize',function(){
+        	var a_w = document.body.clientWidth;
+			
+			if(a_w < 768){
+				$("aside").hide();		
+			}else{
+				$("aside").show();
+		
+				$(".con_box").eq(0).css({"z-index":"800"});
+				$(".con_btn").eq(0).addClass("conb");
+				
+				$(".con_btn").click(function(){
+					var _index = $(this).index();
+					
+					$(this).addClass("conb").siblings().removeClass("conb");
+					$(".con_box").eq(_index).fadeIn(1000).siblings().fadeOut(1000);	
+				});
+			};
+		});
+		
+		
+		
+});
+
+</script>
+
+
+
+
